@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>前端笔记JS篇 | hio</title>
+  <title>ES6变量的解构赋值 | hio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="流控制语句程序的三种结构：顺序结构—选择结构—循环结构 选择结构  if语句 if(判断条件){ 执行条件 }else if (){  }else { }">
+  <meta name="description" content="数组的结构赋值1234let [a,b,c] = [1,2,3];let [a,b,c] = [,123,];let [a=111,b,c] = [,123,];console.log(a,b,c); 对象的解构赋值1234567891011121314151617 let &amp;#123;foo,bar&amp;#125; = &amp;#123;foo : &amp;apos;hello&amp;apos;,bar : &amp;apo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端笔记JS篇">
-<meta property="og:url" content="http://yoursite.com/2017/07/13/newText/index.html">
+<meta property="og:title" content="ES6变量的解构赋值">
+<meta property="og:url" content="http://yoursite.com/2017/07/20/ES6-array1/index.html">
 <meta property="og:site_name" content="hio">
-<meta property="og:description" content="流控制语句程序的三种结构：顺序结构—选择结构—循环结构 选择结构  if语句 if(判断条件){ 执行条件 }else if (){  }else { }">
-<meta property="og:updated_time" content="2017-07-15T02:27:31.942Z">
+<meta property="og:description" content="数组的结构赋值1234let [a,b,c] = [1,2,3];let [a,b,c] = [,123,];let [a=111,b,c] = [,123,];console.log(a,b,c); 对象的解构赋值1234567891011121314151617 let &amp;#123;foo,bar&amp;#125; = &amp;#123;foo : &amp;apos;hello&amp;apos;,bar : &amp;apo">
+<meta property="og:updated_time" content="2017-07-20T11:54:56.987Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端笔记JS篇">
-<meta name="twitter:description" content="流控制语句程序的三种结构：顺序结构—选择结构—循环结构 选择结构  if语句 if(判断条件){ 执行条件 }else if (){  }else { }">
+<meta name="twitter:title" content="ES6变量的解构赋值">
+<meta name="twitter:description" content="数组的结构赋值1234let [a,b,c] = [1,2,3];let [a,b,c] = [,123,];let [a=111,b,c] = [,123,];console.log(a,b,c); 对象的解构赋值1234567891011121314151617 let &amp;#123;foo,bar&amp;#125; = &amp;#123;foo : &amp;apos;hello&amp;apos;,bar : &amp;apo">
   
     <link rel="alternate" href="/atom.xml" title="hio" type="application/atom+xml">
   
@@ -103,7 +103,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-newText" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-ES6-array1" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -111,7 +111,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      前端笔记JS篇
+      ES6变量的解构赋值
     </h1>
   
 
@@ -119,8 +119,8 @@
     
     <div class="article-meta">
       
-	<a href="/2017/07/13/newText/" class="article-date">
-	  <time datetime="2017-07-13T00:59:52.586Z" itemprop="datePublished">七月 13, 2017</time>
+	<a href="/2017/07/20/ES6-array1/" class="article-date">
+	  <time datetime="2017-07-20T11:41:32.273Z" itemprop="datePublished">七月 20, 2017</time>
 	</a>
 
        
@@ -132,21 +132,11 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="流控制语句"><a href="#流控制语句" class="headerlink" title="流控制语句"></a>流控制语句</h2><h6 id="程序的三种结构：顺序结构—选择结构—循环结构"><a href="#程序的三种结构：顺序结构—选择结构—循环结构" class="headerlink" title="程序的三种结构：顺序结构—选择结构—循环结构"></a>程序的三种结构：顺序结构—选择结构—循环结构</h6><ul>
-<li><p>选择结构</p>
-<ul>
-<li><p>if语句</p>
-<pre><code class="javascript"><span class="keyword">if</span>(判断条件){
-执行条件
-}<span class="keyword">else</span> <span class="keyword">if</span> (){
-
-}<span class="keyword">else</span> {
-}
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
+        <h4 id="数组的结构赋值"><a href="#数组的结构赋值" class="headerlink" title="数组的结构赋值"></a>数组的结构赋值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let [a,b,c] = [1,2,3];</div><div class="line">let [a,b,c] = [,123,];</div><div class="line">let [a=111,b,c] = [,123,];</div><div class="line">console.log(a,b,c);</div></pre></td></tr></table></figure>
+<h4 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"> let &#123;foo,bar&#125; = &#123;foo : &apos;hello&apos;,bar : &apos;hi&apos;&#125;;</div><div class="line"> let &#123;foo,bar&#125; = &#123;bar : &apos;hi&apos;,foo : &apos;hello&apos;&#125;;</div><div class="line"></div><div class="line"> 对象属性别名(如果有了别名，那么原来的名字就无效了)</div><div class="line"> let &#123;foo:abc,bar&#125; = &#123;bar : &apos;hi&apos;,foo : &apos;nihao&apos;&#125;;</div><div class="line"> console.log(foo,bar);</div><div class="line"></div><div class="line"> //对象的解构赋值指定默认值</div><div class="line">let &#123;foo:abc=&apos;hello&apos;,bar&#125; = &#123;bar : &apos;hi&apos;&#125;;</div><div class="line">console.log(abc,bar);</div><div class="line"></div><div class="line"> let &#123;cos,sin,random&#125; = Math;</div><div class="line"> console.log(typeof cos);</div><div class="line"> console.log(typeof sin);</div><div class="line"> console.log(typeof random);</div><div class="line"> ```  </div><div class="line"> #### 字符串的解构赋值</div></pre></td></tr></table></figure>
+<p> let [a,b,c,d,e,length] = “hello”;<br> console.log(a,b,c,d,e);<br> console.log(length);</p>
+<p> console.log(“hello”.length);</p>
+<p> let {length} = “hi”;<br> console.log(length);<br> ```</p>
 
       
     </div>
@@ -186,15 +176,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/07/17/notes1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/07/20/ES6-string1/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          get与post需要注意的几点
+          ES6字符串的扩展
         
       </div>
     </a>
   
+  
+    <a href="/2017/07/20/nodejs2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">node.js 学习2</div>
+    </a>
   
 </nav>
 
@@ -207,7 +202,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#流控制语句"><span class="nav-number">1.</span> <span class="nav-text">流控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#程序的三种结构：顺序结构—选择结构—循环结构"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">程序的三种结构：顺序结构—选择结构—循环结构</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组的结构赋值"><span class="nav-number">1.</span> <span class="nav-text">数组的结构赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的解构赋值"><span class="nav-number">2.</span> <span class="nav-text">对象的解构赋值</span></a></li></ol>
     
     </div>
   </aside>

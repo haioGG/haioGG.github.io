@@ -104,6 +104,346 @@
         
           <section id="main">
   
+    <article id="post-ES6-class&amp;extends"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/07/20/ES6-class&extends/">ES6的类和继承</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/07/20/ES6-class&extends/" class="article-date">
+	  <time datetime="2017-07-20T11:59:07.737Z" itemprop="datePublished">七月 20, 2017</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">class Animal&#123;</div><div class="line">    // 静态方法(静态方法只能通过类名调用，不可以使用实例对象调用)</div><div class="line">    static showInfo()&#123;</div><div class="line">        console.log(&apos;hi&apos;);</div><div class="line">    &#125;</div><div class="line">    // 构造函数</div><div class="line">    constructor(name)&#123;</div><div class="line">        this.name = name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    showName()&#123;</div><div class="line">        console.log(this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">let a = new Animal(&apos;spike&apos;);</div><div class="line">a.showName();</div><div class="line">a.showInfo();</div><div class="line">Animal.showInfo();</div></pre></td></tr></table></figure>
+<h4 id="类的继承extends"><a href="#类的继承extends" class="headerlink" title="类的继承extends"></a>类的继承extends</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">class Dog extends Animal&#123;</div><div class="line">    constructor(name,color)&#123;</div><div class="line">        super(name);//super用来调用父类</div><div class="line">        this.color = color;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    showColor()&#123;</div><div class="line">        console.log(this.color);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">let d = new Dog(&apos;doudou&apos;,&apos;yellow&apos;);</div><div class="line">d.showName();</div><div class="line">d.showColor();</div><div class="line">// d.showInfo();</div><div class="line">Dog.showInfo();</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-ES6"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/07/20/ES6/">ES6的扩展运算符</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/07/20/ES6/" class="article-date">
+	  <time datetime="2017-07-20T11:56:29.608Z" itemprop="datePublished">七月 20, 2017</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="扩展运算符-…"><a href="#扩展运算符-…" class="headerlink" title="扩展运算符 …"></a>扩展运算符 …</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function foo(a,b,c,d,e,f,g)&#123;</div><div class="line">    console.log(a + b + c + d + e + f + g);</div><div class="line">&#125;</div><div class="line">// foo(1,2,3,4,5);</div><div class="line">let arr = [1,2,3,4,5,6,7];</div><div class="line">// foo.apply(null,arr);</div><div class="line">foo(...arr);</div><div class="line"></div><div class="line">// 合并数组</div><div class="line">let arr1 = [1,2,3];</div><div class="line">let arr2 = [4,5,6];</div><div class="line">let arr3 = [...arr1,...arr2];</div><div class="line">console.log(arr3);</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-ES6-string1"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/07/20/ES6-string1/">ES6字符串的扩展</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/07/20/ES6-string1/" class="article-date">
+	  <time datetime="2017-07-20T11:50:40.040Z" itemprop="datePublished">七月 20, 2017</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#### </p>
+<ul>
+<li><b>includes() </b>判断字符串中是否包含指定的字串（有的话返回true，否则返回false）<pre><code>参数一：匹配的字串；参数二：从第几个开始匹配
+</code></pre></li>
+<li><b>startsWith() </b> 判断字符串是否以特定的字串开始</li>
+<li><b>endsWith()</b>  判断字符串是否以特定的字串结束</li>
+</ul>
+<h4 id="字符串模板"><a href="#字符串模板" class="headerlink" title="字符串模板"></a>字符串模板</h4><pre><code> let obj = {
+    username : &apos;lisi&apos;,
+    age : &apos;12&apos;,
+    gender : &apos;male&apos;
+}
+
+let tag = &apos;&lt;div&gt;&lt;span&gt;&apos;+obj.username+&apos;&lt;/span&gt;&lt;span&gt;&apos;+obj.age+&apos;&lt;/span&gt;&lt;span&gt;&apos;+obj.gender+&apos;&lt;/span&gt;&lt;/div&gt;&apos;;
+console.log(tag);
+// 反引号表示模板，模板中的内容可以有格式，通过${}方式填充数据
+let fn = function(info){
+    return info;
+}
+let tpl = `
+    &lt;div&gt;
+        &lt;span&gt;${obj.username}&lt;/span&gt;
+        &lt;span&gt;${obj.age}&lt;/span&gt;
+        &lt;span&gt;${obj.gender}&lt;/span&gt;
+        &lt;span&gt;${1+1}&lt;/span&gt;
+        &lt;span&gt;${fn(&apos;nihao&apos;)}&lt;/span&gt;
+    &lt;/div&gt;
+`;
+console.log(tpl);
+</code></pre>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-ES6-array1"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/07/20/ES6-array1/">ES6变量的解构赋值</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/07/20/ES6-array1/" class="article-date">
+	  <time datetime="2017-07-20T11:41:32.273Z" itemprop="datePublished">七月 20, 2017</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="数组的结构赋值"><a href="#数组的结构赋值" class="headerlink" title="数组的结构赋值"></a>数组的结构赋值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let [a,b,c] = [1,2,3];</div><div class="line">let [a,b,c] = [,123,];</div><div class="line">let [a=111,b,c] = [,123,];</div><div class="line">console.log(a,b,c);</div></pre></td></tr></table></figure>
+<h4 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"> let &#123;foo,bar&#125; = &#123;foo : &apos;hello&apos;,bar : &apos;hi&apos;&#125;;</div><div class="line"> let &#123;foo,bar&#125; = &#123;bar : &apos;hi&apos;,foo : &apos;hello&apos;&#125;;</div><div class="line"></div><div class="line"> 对象属性别名(如果有了别名，那么原来的名字就无效了)</div><div class="line"> let &#123;foo:abc,bar&#125; = &#123;bar : &apos;hi&apos;,foo : &apos;nihao&apos;&#125;;</div><div class="line"> console.log(foo,bar);</div><div class="line"></div><div class="line"> //对象的解构赋值指定默认值</div><div class="line">let &#123;foo:abc=&apos;hello&apos;,bar&#125; = &#123;bar : &apos;hi&apos;&#125;;</div><div class="line">console.log(abc,bar);</div><div class="line"></div><div class="line"> let &#123;cos,sin,random&#125; = Math;</div><div class="line"> console.log(typeof cos);</div><div class="line"> console.log(typeof sin);</div><div class="line"> console.log(typeof random);</div><div class="line"> ```  </div><div class="line"> #### 字符串的解构赋值</div></pre></td></tr></table></figure>
+<p> let [a,b,c,d,e,length] = “hello”;<br> console.log(a,b,c,d,e);<br> console.log(length);</p>
+<p> console.log(“hello”.length);</p>
+<p> let {length} = “hi”;<br> console.log(length);<br> ```</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-nodejs2"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/07/20/nodejs2/">node.js 学习2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/07/20/nodejs2/" class="article-date">
+	  <time datetime="2017-07-20T11:27:32.468Z" itemprop="datePublished">七月 20, 2017</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><p></p><p><b>ES6的变量声明</b></p><p></p>
+<ul>
+<li><p>let     变量声明</p>
+<ul>
+<li>不存在与解析</li>
+<li>不允许重复</li>
+<li><p>块级作用域（块内部的变量，外部不可访问）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">    if(true) &#123;</div><div class="line">    var num = 123;</div><div class="line">    let sub = 456;</div><div class="line">&#125;</div><div class="line">console.log(num);</div><div class="line">console.log(sub);</div><div class="line"> //报错:ReferenceError: sub is not defined</div></pre></td></tr></table></figure>
+</li>
+<li><p>for循环括号中声明的变量只能在循环体中使用</p>
+</li>
+<li>在块级作用域内部，变量只能先声明再使用</li>
+</ul>
+</li>
+<li><p>const   常量声明</p>
+<ul>
+<li>const声明的常量不允许重新赋值</li>
+<li>const声明的常量必须初始化</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-nodejs"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/07/20/nodejs/">node.js学习1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/07/20/nodejs/" class="article-date">
+	  <time datetime="2017-07-20T10:43:21.721Z" itemprop="datePublished">七月 20, 2017</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h2><ul>
+<li><p><b>globas node.js里的全局变量</b></p><ul>
+<li>_dirname  不包含文件名的全路径</li>
+<li>_filename  包含文件名的全路径</li>
+</ul>
+</li>
+</ul>
+<h3 id="node-js的模块化"><a href="#node-js的模块化" class="headerlink" title="node.js的模块化"></a>node.js的模块化</h3><ul>
+<li>process.argv  （参数1：node.js的安装路径，参数2：执行文件的路径,参数3,4,5,6,7,8……：接收的命令行数据……）<p><b>模块化开发的优点</b></p></li>
+<li>前端标准模块化规范(一般是异步)<ul>
+<li>AMD  require.js(国外)</li>
+<li>CMD  sea.js(阿里)</li>
+</ul>
+</li>
+<li><p>服务器的模块化规范(一般是同步的)</p>
+<ul>
+<li>CommonJs  Node.js</li>
+</ul>
+</li>
+<li><p>模块化的规则</p>
+<ul>
+<li>一个js文件就是一个模块，模块内部的成员是相互独立的</li>
+<li>模块成员的导出和引入</li>
+</ul>
+<ul>
+<li>模块的导出和引入<ul>
+<li><p><b>exports（导出） require（引入）</b></p></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>导出方式1(导出的是一个对象)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> //文件1.js(导出)</div><div class="line">  var sum = function(a,b)&#123;</div><div class="line">    return a + b;</div><div class="line">  &#125;</div><div class="line">  exports.sum = sum;</div><div class="line">//文件2.js(引入)</div><div class="line">  var module = require(&apos;./文件1.js&apos;);</div><div class="line">  var ret = module.sum(1,2)</div><div class="line"> ``` </div><div class="line">  + 导出的方式2(导出的是一个方法，导出之后的方法会被改变，会被重新赋值)</div></pre></td></tr></table></figure>
+<p> //文件1.js(导出)<br>  var sum = function(a,b){<br>    return a + b;<br>  }<br>  module.exports= sum;<br>//文件2.js(引入)<br>  var sum = require(‘./文件1.js’);<br>  var ret = sum(1,2)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;&lt;b&gt;以上两种方式不能同时使用&lt;/b&gt;&lt;/p&gt;</div><div class="line">&lt;p&gt;&lt;b&gt;导出单个成员一般使用exports&lt;/b&gt;&lt;/p&gt;</div><div class="line">&lt;p&gt;&lt;b&gt;导出多个成员一般使用module.exports&lt;/b&gt;&lt;/p&gt;</div><div class="line">&lt;p&gt;&lt;/p&gt;</div></pre></td></tr></table></figure></p>
+<p>module.expofts = {<br>      导出1 ，<br>      导出2，<br>      ……<br>}<br>```</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-mysql2"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -406,195 +746,12 @@ $$abb
 <!-- Table of Contents -->
 
   
-    <article id="post-php1"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+
+
+  <nav id="page-nav">
     
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/07/18/php1/">PHP学习总结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2017/07/18/php1/" class="article-date">
-	  <time datetime="2017-07-18T06:33:18.660Z" itemprop="datePublished">七月 18, 2017</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5>PHP定义：一种服务器端的 HTML 脚本/编程语言,是一种简单的、面向对象的、解释型的、健壮的、安全的、性能非常之高的、独立于架构的、可移植的、动态的脚本语言。</h5>
-
-<p>php语言的创建者：<b>Rasmus Lerdorf</b></p><br><p>平台支持（<b>window，Linux，UNIX</b>）</p><br><p>数据库支持（<b>Sqlserver，mysql，Oracle，Access</b>）</p>
-
-<p><b>静态网站的特点</b></p><br>    + 态网页是实实在在保存在服务器上的文件，每个网页都是一个独立的文件；<br>    + 静态网页的内容相对稳定，因此容易被搜索引擎检索；<br>    + 静态网页没有数据库的支持，在网站制作和维护方面工作量较大，因此当网站信息量很大时完全依靠静态网页制作方式比较困难；<br>    + 静态网页的交互性较差，在功能方面有较大的限制。<br><p></p><br><p><b>动态网站特点</b></p><br>    + 交互性：网页会根据用户的要求和选择而动态地改变和响应<br>    + 自动更新：即无须手动更新HTML文档，便会自动生成新页面，可以大大节省工作量。<br>    + 因时因人而变：即当不同时间、不同用户访问同一网址时会出现不同页面。<br><br><p></p><br> <p><b>动态网页是与静态网页相对应的，也就是说，网页URL的后缀不是.htm、.html、.shtml、.xml等静态网页的常见形式，而是以.asp、.jsp、.php、.perl、.cgi等形式为后缀。在动态网页网址中有一个标志性的符号——“?”</b></p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-notes1"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/07/17/notes1/">get与post需要注意的几点</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2017/07/17/notes1/" class="article-date">
-	  <time datetime="2017-07-17T13:52:42.674Z" itemprop="datePublished">七月 17, 2017</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h1 id="getpost-vs-web-中的-getpost">1、&quot;get/post&quot; VS &quot;web 中的 get/post&quot;</h1><p></p>
-<p>一些 web 相关职位的面试，无论有没有提 web，面试中的 get/post，一般就是指 web 中的 get/post。需要注意的是，web 中的 get/post 只是 http 中的 get/post 的子集，所以如果谈 get 与 post 的区别，要是面试官有心挖坑，就要特别注意下你们聊的是不是 web 中的 get/post。（本文接下去讲的 get/post 基本上是基于 web 的）</p><br><p>关于 get/post，可以查看 rfc-2616 了解详情：</p><br><ul><br><li>get: <a href="http://tools.ietf.org/html/rfc2616#section-9.3" target="_blank" rel="external">RFC 2616 - Hypertext Transfer Protocol – HTTP/1.1</a></li><br><li>post: <a href="http://tools.ietf.org/html/rfc2616#section-9.5" target="_blank" rel="external">RFC 2616 - Hypertext Transfer Protocol – HTTP/1.1</a></li><br></ul><br><p>其实，<strong>http 中的 get 与 post 只是单纯的名字上的区别</strong>，get 请求的数据也可以放在 request body 中，只是浏览器没有实现它，但是 get 并不只是在 web 中使用。所以，说到 get/post 的区别，会直接条件反射地去说 web 中的 get/post 区别。而 web 中 get 以及 post，其实都可以往服务端发送数据，get 是将数据拼接在 url 上（有必要时需要 encode），而 post 是将数据封装在 request body 中，发送过去。</p><br><p>get/post 可以顾名思义地理解，get 是用来请求数据，那么，既然是请求数据，为什么还要带上数据呢？其实很好理解，比如一个新闻页面，有很多内页，那么 get 请求可能带上的类似这样的参数 <code>page=1</code>，即为请求第一页的数据。post 的话顾名思义就是发送数据，所以需要带上数据。</p><br><h1 id="get-请求是安全和幂等的">2、get 请求是安全和幂等的</h1><br><p>何谓安全？这里的安全指的是在规范的定义下，get 操作不会修改服务器的数据，无论做多少次 get 请求，服务端的数据都是不会有变化的，所以说 get 请求是安全的。&quot;get 请求是安全的&quot; 换句话说就是 &quot;get 请求不产生副作用&quot;，它仅仅是获取资源信息，就像数据库查询一样，不会修改，增加数据，不会影响资源的状态。</p><br><p>何谓幂等？幂等是说，同一个请求原封不动的发送 N 次和 M 次（N 不等于 M，N 和 M 都大于 1），服务器上资源的状态最终是一致的，相应地服务器返回的内容也是一致的。get 请求是幂等的，因为无论请求多少次，服务器上的资源状态不变，而 post 则不然，post 会更新服务器的数据。比如发贴是非幂等的，重复 10 次发贴请求会创建 10 个帖子。但修改帖子内容是幂等的，一个修改请求重复无论多少次，帖子最终状态都是一致的。</p><br><p>关于幂等再举个数学上的例子。对于单目运算，如果一个运算对于在范围内的所有的一个数多次进行该运算所得的结果和进行一次该运算所得的结果是一样的，那么我们就称该运算是幂等的。比如绝对值运算就是一个例子，在实数集中，有 <code>abs(a)=abs(abs(a))</code>。这个例子非常的好，abs(a) 可以表示做了一次 get 请求后的服务器上的资源状态，对其继续做 abs 运算，状态不变，这就好比做了一次 get 请求，继续再做，而该资源状态一直不变，所以请求得到的东西也就不会变。</p><br><p>因此，按照某一 ID 阅览文章就是安全而幂等的，应当使用 get。而注册用户、登录等操作会改变服务器的资源状态，不是安全而幂等的，应当使用 post。</p><br><h1 id="post-相对-get-请求是-安全-的">3、post 相对 get 请求是 &quot;安全&quot; 的</h1><br><p>这里的 &quot;安全&quot;，和第二点所讲的 &quot;安全&quot; 又是两回事了。这里的 &quot;安全&quot; 是密码学上的，也就是大多数场景中 &quot;安全&quot; 的意思。</p><br><p>其实该点颇有点（post）五十步笑（get）百步之嫌。</p><br><p>我们知道，get 请求是将数据附在 url 上，而 post 是将数据封装在 request body 中。所以 get 请求附加的参数可能会被人在浏览器地址栏上直接看到，或者查看一下浏览器的历史记录或者日志，就能看到你的参数。而 post 因为不能被缓存，也不能被保存为书签，所以请求过了就没有记录了？请求参数就不能被截获了？非也，抓个包就可以看到了。</p><br><p>所以，post 请求只是相对安全的。（防君子防不了小人）</p><br><h1 id="get-请求发送数据更小">4、get 请求发送数据更小</h1><br><p>http 协议中的 get/post 并没有发送数据大小的限制，对发送数据大小产生限制的是浏览器以及操作系统、服务器，<strong>http 本身并没有对 url 长度有所限制</strong>。</p><br><p>IE 对 URL 长度的限制是 <a href="https://support.microsoft.com/en-us/kb/208427" target="_blank" rel="external">2083字节</a>（&lt;=IE 8）。对于其他浏览器，如 Netscape、FireFox 等，理论上没有长度限制，其限制取决于操作系统以及服务器的支持。而 chrome 遇到长度很长的 URL 时，会直接 <a href="https://code.google.com/p/chromium/issues/detail?id=69227" target="_blank" rel="external">崩溃</a>。</p><br><p>URL 长了，对服务器处理也是一种负担。原本一个会话就没有多少数据，现在如果有人恶意地构造几个几 M 大小的 URL，并不停地访问你的服务器。服务器的最大并发数显然会下降。另一种攻击方式是，把告诉服务器 Content-Length 是一个很大的数，然后只给服务器发一点儿数据，嘿嘿，服务器你就傻等着去吧。哪怕你有超时设置，这种故意的次次访问超时也能让服务器吃不了兜着走。有鉴于此，多数服务器出于安全啦、稳定啦方面的考虑，会给 URL 长度加限制。</p><br><p>理论上讲，POST 是没有大小限制的，HTTP 协议规范也没有进行大小限制，说 &quot;POST数据量存在80K/100K 的大小限制&quot; 是不准确的，POST 数据是没有限制的，起限制作用的是服务器的处理程序的处理能力。</p><br><h1 id="get-能被缓存post-不能被缓存">5、get 能被缓存，post 不能被缓存</h1><br><p>这点非常容易理解，打开一个页面，如果之前打开过，那么很明显速度会加快，这是因为 html/js/css/img 等文件都能被浏览器缓存（也可以被服务器缓存），而这些文件的获取，都是用的 get 请求。事实上，web 中的绝大多数请求都是用 get 完成的，post 请求目前为止我只是在 ajax 以及 form 表单中有见过。</p><br><p>但是实际上，http 协议中 post 和 get 都是可以被缓存的，不过不要惊讶，浏览器的实现总是比标准厉害。（post 和 get 真的只有名字上的区别啊。。）</p><br><p>因为 get 请求会有缓存，所以在开发过程中，很多时候我们要手动清除缓存，不然看不到修改后的样子。</p><br><p>关于 get 请求能被缓存我有个惨痛的经历。在一次开发中，要做一个跳转页面（假设为 a.index，同时需要在主页面（假设为 index.htm）中带个参数（假设为 tmp）过去，为了方便，直接将参数附加在了跳转页面的 url 上，页面地址为 a.htm?tmp，直接取其 location.search 属性即可获取参数。之后修改了 a.htm 页面的内容，但是发现一直不生效，并且已经清除了 a.htm 页面的缓存，排查了很久，原因很显然，缓存地址为 a.htm?tmp，需要清除该地址的缓存！</p><br><p>所以一般要获取最新的文件（非缓存文件），可以加个类似时间戳一样的参数。</p><br><h1 id="form-表单可以用-get-提交">6、form 表单可以用 get 提交</h1><br><p>form 表单有个 method 属性，一般为 &quot;post&quot;。但是，其实 method 属性是可以为 &quot;get&quot; 的，甚至，默认就是 &quot;get&quot;。</p><br><p>如果是 &quot;post&quot; 方式，数据藏在 request body 中，如果是 &quot;get&quot; 方式，数据拼接在 url 上。但是，一般 form 表示都与 &quot;数据提交&quot; 相辅相成，会对服务端数据做修改，所以一般都是以 &quot;post&quot; 的方式。</p><br><h1 id="求他put-以及-delete">7、求他：put 以及 delete</h1><br><p>说完 get/post，再来简单谈谈他们的其他几个好基友吧。</p><br><p>Http 定义了与服务器交互的不同方法，最基本的方法有 4 种，分别是 GET，POST，PUT，DELETE。URL 全称是资源描述符，我们可以这样认为：一个 URL 地址，它用于描述一个网络上的资源，而 HTTP 中的 GET，POST，PUT，DELETE 就对应着对这个资源的查，改，增，删 4 个操作。</p><br><ul><br><li>GET：无副作用，幂等，不可带 Request Body</li><br><li>PUT：副作用，幂等，可以带 Request Body</li><br><li>POST：副作用，非幂等，可以带 Request Body</li><br><li>DELETE：副作用，幂等，不可带 Request Body</li><br></ul><br><p>get 和 post 成功之后应该返回 200；而 put 和 delete 在成功时则推荐使用 202.</p>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-newText"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/07/13/newText/">前端笔记JS篇</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2017/07/13/newText/" class="article-date">
-	  <time datetime="2017-07-13T00:59:52.586Z" itemprop="datePublished">七月 13, 2017</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="流控制语句"><a href="#流控制语句" class="headerlink" title="流控制语句"></a>流控制语句</h2><h6 id="程序的三种结构：顺序结构—选择结构—循环结构"><a href="#程序的三种结构：顺序结构—选择结构—循环结构" class="headerlink" title="程序的三种结构：顺序结构—选择结构—循环结构"></a>程序的三种结构：顺序结构—选择结构—循环结构</h6><ul>
-<li><p>选择结构</p>
-<ul>
-<li><p>if语句</p>
-<pre><code class="javascript"><span class="keyword">if</span>(判断条件){
-执行条件
-}<span class="keyword">else</span> <span class="keyword">if</span> (){
-
-}<span class="keyword">else</span> {
-}
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-hello-world"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/07/12/hello-world/">个人主页</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2017/07/12/hello-world/" class="article-date">
-	  <time datetime="2017-07-12T12:36:42.702Z" itemprop="datePublished">七月 12, 2017</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>欢迎来到我的个人博客</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+  </nav>
 
 </section>
           <aside id="sidebar">
@@ -656,8 +813,8 @@ $$abb
               <div class="widget-entry-summary" style="margin: 0;">
             
 
-              <h6 style="margin: 0;"><a href="/2017/07/18/mysql2/">mysql数据库的指令</a></h6>
-              <span>七月 18, 2017</span>
+              <h6 style="margin: 0;"><a href="/2017/07/20/ES6-class&extends/">ES6的类和继承</a></h6>
+              <span>七月 20, 2017</span>
             </div>
 
           </li>
@@ -668,8 +825,8 @@ $$abb
               <div class="widget-entry-summary" style="margin: 0;">
             
 
-              <h6 style="margin: 0;"><a href="/2017/07/18/mysql1/">mysql数据库</a></h6>
-              <span>七月 18, 2017</span>
+              <h6 style="margin: 0;"><a href="/2017/07/20/ES6/">ES6的扩展运算符</a></h6>
+              <span>七月 20, 2017</span>
             </div>
 
           </li>
@@ -680,8 +837,8 @@ $$abb
               <div class="widget-entry-summary" style="margin: 0;">
             
 
-              <h6 style="margin: 0;"><a href="/2017/07/18/php3/">PHP学习总结3</a></h6>
-              <span>七月 18, 2017</span>
+              <h6 style="margin: 0;"><a href="/2017/07/20/ES6-string1/">ES6字符串的扩展</a></h6>
+              <span>七月 20, 2017</span>
             </div>
 
           </li>
@@ -692,8 +849,8 @@ $$abb
               <div class="widget-entry-summary" style="margin: 0;">
             
 
-              <h6 style="margin: 0;"><a href="/2017/07/18/php2/">PHP学习总结2</a></h6>
-              <span>七月 18, 2017</span>
+              <h6 style="margin: 0;"><a href="/2017/07/20/ES6-array1/">ES6变量的解构赋值</a></h6>
+              <span>七月 20, 2017</span>
             </div>
 
           </li>
@@ -704,8 +861,8 @@ $$abb
               <div class="widget-entry-summary" style="margin: 0;">
             
 
-              <h6 style="margin: 0;"><a href="/2017/07/18/php1/">PHP学习总结</a></h6>
-              <span>七月 18, 2017</span>
+              <h6 style="margin: 0;"><a href="/2017/07/20/nodejs2/">node.js 学习2</a></h6>
+              <span>七月 20, 2017</span>
             </div>
 
           </li>
@@ -716,8 +873,8 @@ $$abb
               <div class="widget-entry-summary" style="margin: 0;">
             
 
-              <h6 style="margin: 0;"><a href="/2017/07/17/notes1/">get与post需要注意的几点</a></h6>
-              <span>七月 17, 2017</span>
+              <h6 style="margin: 0;"><a href="/2017/07/20/nodejs/">node.js学习1</a></h6>
+              <span>七月 20, 2017</span>
             </div>
 
           </li>
@@ -740,7 +897,7 @@ $$abb
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 

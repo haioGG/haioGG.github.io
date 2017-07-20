@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>前端笔记JS篇 | hio</title>
+  <title>ES6的扩展运算符 | hio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="流控制语句程序的三种结构：顺序结构—选择结构—循环结构 选择结构  if语句 if(判断条件){ 执行条件 }else if (){  }else { }">
+  <meta name="description" content="扩展运算符 …12345678910111213function foo(a,b,c,d,e,f,g)&amp;#123;    console.log(a + b + c + d + e + f + g);&amp;#125;// foo(1,2,3,4,5);let arr = [1,2,3,4,5,6,7];// foo.apply(null,arr);foo(...arr);// 合并数组let arr1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端笔记JS篇">
-<meta property="og:url" content="http://yoursite.com/2017/07/13/newText/index.html">
+<meta property="og:title" content="ES6的扩展运算符">
+<meta property="og:url" content="http://yoursite.com/2017/07/20/ES6/index.html">
 <meta property="og:site_name" content="hio">
-<meta property="og:description" content="流控制语句程序的三种结构：顺序结构—选择结构—循环结构 选择结构  if语句 if(判断条件){ 执行条件 }else if (){  }else { }">
-<meta property="og:updated_time" content="2017-07-15T02:27:31.942Z">
+<meta property="og:description" content="扩展运算符 …12345678910111213function foo(a,b,c,d,e,f,g)&amp;#123;    console.log(a + b + c + d + e + f + g);&amp;#125;// foo(1,2,3,4,5);let arr = [1,2,3,4,5,6,7];// foo.apply(null,arr);foo(...arr);// 合并数组let arr1">
+<meta property="og:updated_time" content="2017-07-20T11:58:12.482Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端笔记JS篇">
-<meta name="twitter:description" content="流控制语句程序的三种结构：顺序结构—选择结构—循环结构 选择结构  if语句 if(判断条件){ 执行条件 }else if (){  }else { }">
+<meta name="twitter:title" content="ES6的扩展运算符">
+<meta name="twitter:description" content="扩展运算符 …12345678910111213function foo(a,b,c,d,e,f,g)&amp;#123;    console.log(a + b + c + d + e + f + g);&amp;#125;// foo(1,2,3,4,5);let arr = [1,2,3,4,5,6,7];// foo.apply(null,arr);foo(...arr);// 合并数组let arr1">
   
     <link rel="alternate" href="/atom.xml" title="hio" type="application/atom+xml">
   
@@ -103,7 +103,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-newText" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-ES6" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -111,7 +111,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      前端笔记JS篇
+      ES6的扩展运算符
     </h1>
   
 
@@ -119,8 +119,8 @@
     
     <div class="article-meta">
       
-	<a href="/2017/07/13/newText/" class="article-date">
-	  <time datetime="2017-07-13T00:59:52.586Z" itemprop="datePublished">七月 13, 2017</time>
+	<a href="/2017/07/20/ES6/" class="article-date">
+	  <time datetime="2017-07-20T11:56:29.608Z" itemprop="datePublished">七月 20, 2017</time>
 	</a>
 
        
@@ -132,22 +132,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="流控制语句"><a href="#流控制语句" class="headerlink" title="流控制语句"></a>流控制语句</h2><h6 id="程序的三种结构：顺序结构—选择结构—循环结构"><a href="#程序的三种结构：顺序结构—选择结构—循环结构" class="headerlink" title="程序的三种结构：顺序结构—选择结构—循环结构"></a>程序的三种结构：顺序结构—选择结构—循环结构</h6><ul>
-<li><p>选择结构</p>
-<ul>
-<li><p>if语句</p>
-<pre><code class="javascript"><span class="keyword">if</span>(判断条件){
-执行条件
-}<span class="keyword">else</span> <span class="keyword">if</span> (){
-
-}<span class="keyword">else</span> {
-}
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-
+        <h4 id="扩展运算符-…"><a href="#扩展运算符-…" class="headerlink" title="扩展运算符 …"></a>扩展运算符 …</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function foo(a,b,c,d,e,f,g)&#123;</div><div class="line">    console.log(a + b + c + d + e + f + g);</div><div class="line">&#125;</div><div class="line">// foo(1,2,3,4,5);</div><div class="line">let arr = [1,2,3,4,5,6,7];</div><div class="line">// foo.apply(null,arr);</div><div class="line">foo(...arr);</div><div class="line"></div><div class="line">// 合并数组</div><div class="line">let arr1 = [1,2,3];</div><div class="line">let arr2 = [4,5,6];</div><div class="line">let arr3 = [...arr1,...arr2];</div><div class="line">console.log(arr3);</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="entry-meta entry-footer">
@@ -186,15 +171,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/07/17/notes1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/07/20/ES6-class&extends/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          get与post需要注意的几点
+          ES6的类和继承
         
       </div>
     </a>
   
+  
+    <a href="/2017/07/20/ES6-string1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">ES6字符串的扩展</div>
+    </a>
   
 </nav>
 
@@ -207,7 +197,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#流控制语句"><span class="nav-number">1.</span> <span class="nav-text">流控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#程序的三种结构：顺序结构—选择结构—循环结构"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">程序的三种结构：顺序结构—选择结构—循环结构</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展运算符-…"><span class="nav-number">1.</span> <span class="nav-text">扩展运算符 …</span></a></li></ol>
     
     </div>
   </aside>

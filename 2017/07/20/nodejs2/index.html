@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>前端笔记JS篇 | hio</title>
+  <title>node.js 学习2 | hio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="流控制语句程序的三种结构：顺序结构—选择结构—循环结构 选择结构  if语句 if(判断条件){ 执行条件 }else if (){  }else { }">
+  <meta name="description" content="ES6ES6的变量声明  let     变量声明  不存在与解析 不允许重复 块级作用域（块内部的变量，外部不可访问） 1234567    if(true) &amp;#123;    var num = 123;    let sub = 456;&amp;#125;console.log(num);console.log(sub); //报错:ReferenceError: sub is not defi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端笔记JS篇">
-<meta property="og:url" content="http://yoursite.com/2017/07/13/newText/index.html">
+<meta property="og:title" content="node.js 学习2">
+<meta property="og:url" content="http://yoursite.com/2017/07/20/nodejs2/index.html">
 <meta property="og:site_name" content="hio">
-<meta property="og:description" content="流控制语句程序的三种结构：顺序结构—选择结构—循环结构 选择结构  if语句 if(判断条件){ 执行条件 }else if (){  }else { }">
-<meta property="og:updated_time" content="2017-07-15T02:27:31.942Z">
+<meta property="og:description" content="ES6ES6的变量声明  let     变量声明  不存在与解析 不允许重复 块级作用域（块内部的变量，外部不可访问） 1234567    if(true) &amp;#123;    var num = 123;    let sub = 456;&amp;#125;console.log(num);console.log(sub); //报错:ReferenceError: sub is not defi">
+<meta property="og:updated_time" content="2017-07-20T11:40:15.229Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端笔记JS篇">
-<meta name="twitter:description" content="流控制语句程序的三种结构：顺序结构—选择结构—循环结构 选择结构  if语句 if(判断条件){ 执行条件 }else if (){  }else { }">
+<meta name="twitter:title" content="node.js 学习2">
+<meta name="twitter:description" content="ES6ES6的变量声明  let     变量声明  不存在与解析 不允许重复 块级作用域（块内部的变量，外部不可访问） 1234567    if(true) &amp;#123;    var num = 123;    let sub = 456;&amp;#125;console.log(num);console.log(sub); //报错:ReferenceError: sub is not defi">
   
     <link rel="alternate" href="/atom.xml" title="hio" type="application/atom+xml">
   
@@ -103,7 +103,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-newText" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-nodejs2" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -111,7 +111,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      前端笔记JS篇
+      node.js 学习2
     </h1>
   
 
@@ -119,8 +119,8 @@
     
     <div class="article-meta">
       
-	<a href="/2017/07/13/newText/" class="article-date">
-	  <time datetime="2017-07-13T00:59:52.586Z" itemprop="datePublished">七月 13, 2017</time>
+	<a href="/2017/07/20/nodejs2/" class="article-date">
+	  <time datetime="2017-07-20T11:27:32.468Z" itemprop="datePublished">七月 20, 2017</time>
 	</a>
 
        
@@ -132,18 +132,24 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="流控制语句"><a href="#流控制语句" class="headerlink" title="流控制语句"></a>流控制语句</h2><h6 id="程序的三种结构：顺序结构—选择结构—循环结构"><a href="#程序的三种结构：顺序结构—选择结构—循环结构" class="headerlink" title="程序的三种结构：顺序结构—选择结构—循环结构"></a>程序的三种结构：顺序结构—选择结构—循环结构</h6><ul>
-<li><p>选择结构</p>
+        <h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><p></p><p><b>ES6的变量声明</b></p><p></p>
 <ul>
-<li><p>if语句</p>
-<pre><code class="javascript"><span class="keyword">if</span>(判断条件){
-执行条件
-}<span class="keyword">else</span> <span class="keyword">if</span> (){
-
-}<span class="keyword">else</span> {
-}
-</code></pre>
+<li><p>let     变量声明</p>
+<ul>
+<li>不存在与解析</li>
+<li>不允许重复</li>
+<li><p>块级作用域（块内部的变量，外部不可访问）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">    if(true) &#123;</div><div class="line">    var num = 123;</div><div class="line">    let sub = 456;</div><div class="line">&#125;</div><div class="line">console.log(num);</div><div class="line">console.log(sub);</div><div class="line"> //报错:ReferenceError: sub is not defined</div></pre></td></tr></table></figure>
 </li>
+<li><p>for循环括号中声明的变量只能在循环体中使用</p>
+</li>
+<li>在块级作用域内部，变量只能先声明再使用</li>
+</ul>
+</li>
+<li><p>const   常量声明</p>
+<ul>
+<li>const声明的常量不允许重新赋值</li>
+<li>const声明的常量必须初始化</li>
 </ul>
 </li>
 </ul>
@@ -186,15 +192,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/07/17/notes1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/07/20/ES6-array1/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          get与post需要注意的几点
+          ES6变量的解构赋值
         
       </div>
     </a>
   
+  
+    <a href="/2017/07/20/nodejs/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">node.js学习1</div>
+    </a>
   
 </nav>
 
@@ -207,7 +218,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#流控制语句"><span class="nav-number">1.</span> <span class="nav-text">流控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#程序的三种结构：顺序结构—选择结构—循环结构"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">程序的三种结构：顺序结构—选择结构—循环结构</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6"><span class="nav-number">1.</span> <span class="nav-text">ES6</span></a></li></ol>
     
     </div>
   </aside>
